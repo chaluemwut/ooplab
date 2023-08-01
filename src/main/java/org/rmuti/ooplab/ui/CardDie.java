@@ -1,5 +1,7 @@
 package org.rmuti.ooplab.ui;
 
+import org.rmuti.ooplab.ui.events.IntClick;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -8,7 +10,7 @@ import java.awt.event.MouseEvent;
 public class CardDie extends JFrame {
     private JButton[] buttons;
     private Die die;
-    private AbstractClick click;
+    private IntClick click;
 
     public CardDie() {
         super("OOP Lab");
@@ -19,7 +21,7 @@ public class CardDie extends JFrame {
         setVisible(true);
     }
 
-    public void setOnClick(AbstractClick click){
+    public void setOnClick(IntClick click){
         this.click = click;
     }
 
@@ -35,7 +37,7 @@ public class CardDie extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                die.changeDieFace(click.getRandomDie());
+                die.changeDieFace(click.getIntOnClick());
             }
         });
 //        for (int i = 0; i < buttons.length; i++) {
