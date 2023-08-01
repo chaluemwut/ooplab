@@ -12,10 +12,7 @@ public class WebReader {
         URL url = null;
         try {
             url = new URL(link);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-        try (InputStream input = url.openStream()) {
+            InputStream input = url.openStream();
             InputStreamReader isr = new InputStreamReader(input);
             BufferedReader reader = new BufferedReader(isr);
             StringBuilder json = new StringBuilder();
@@ -24,6 +21,8 @@ public class WebReader {
                 json.append((char) c);
             }
             return json.toString();
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
