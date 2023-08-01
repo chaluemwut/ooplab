@@ -1,4 +1,4 @@
-package org.rmuti.ooplab;
+package org.rmuti.ooplab.ui;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
